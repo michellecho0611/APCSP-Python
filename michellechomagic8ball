@@ -1,0 +1,30 @@
+# We are importing the random module, so that a random answer from the list can come up when prompted
+import random
+#Here I have created a function in order to return an random answer from the list when you input a question
+def function():
+    #A list of answers
+    answers = ["Of course!", "I don't know.", "Let me ask Sarah", "Try again", "Yes", "No", "That is above my pay grade", "Please try again", "Ask God" ]
+    #The user can input a question to begin the magic 8 ball process
+    question = input("What is your question? ")
+    #Showing an in progres message
+    print("IN PROGRESS... please wait")
+    #The answer to this question will be chosen randomly from the list called "answers"
+    answer = random.choice(answers)
+    #The answer is printed
+    print("Answer: " + answer)
+#Here I am calling the function back to let it run
+function()
+#I have created an if statement so that if the user wants to ask another question, by entering "Y" they will be able to do so. If they enter "N" they will exit the program
+ans1 = "Y"
+ans2 = "N"
+question2 = input("Would you like to ask another question? Y/N? ")
+# I have created a while loop so that the user can ask questions until they want to stop
+while question2 == ans1:
+    function()
+    question2 = input("Would you like to ask another question? Y/N? ")
+#I created another while loop to allow the user to exit the program
+while question2 == ans2:
+    #When they enter "N" this print statement will come up 
+    print("Thank you for playing today. Press any key to exit")
+    #This break is put in so that the statement will only print once, thus ending the code
+    break
